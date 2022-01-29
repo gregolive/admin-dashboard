@@ -1,0 +1,62 @@
+:root {
+  --primary-color: #FF5678;
+  --secondary-color: #5789ff;
+  --tertiary-color: #D6E2FF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template: 20vh 80vh / 1fr 5fr;
+}
+
+.container > * {
+  display: grid;
+}
+
+aside.dashboard {
+  background-color: var(--secondary-color);
+  padding: 1rem 1.25rem;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: start;
+}
+
+.dash-group {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.dash-group a {
+  color: white;
+  text-decoration: none;
+  display: grid;
+  column-gap: 0.75rem;
+  grid-template-columns: 30px auto;
+  align-items: center;
+}
+
+h3, h4 {
+  margin: 0;
+}
+
+aside.dashboard svg {
+  justify-self: end;
+}
+
+
+header {
+  background-color: var(--tertiary-color);
+  grid-row: 2 / -1;
+}
+
+
+
+section {
+}
