@@ -2,6 +2,9 @@
   --primary-color: #FF5678;
   --secondary-color: #5789ff;
   --tertiary-color: #D6E2FF;
+
+  --profile-img-height1: 2.5rem;
+  --profile-img-height2: 3.75rem;
 }
 
 body {
@@ -42,6 +45,10 @@ aside.dashboard {
   align-items: center;
 }
 
+.dash-group a:hover {
+  text-decoration: underline;
+}
+
 h3, h4 {
   margin: 0;
 }
@@ -50,13 +57,124 @@ aside.dashboard svg {
   justify-self: end;
 }
 
-
 header {
-  background-color: var(--tertiary-color);
-  grid-row: 2 / -1;
+  background-color: white;
+  min-height: 130px;
+  padding: 0.5rem 3rem;
+  grid-column: 2 / -1;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.6);
+  display: grid;
+  grid-template-rows: 1fr 1.5fr;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  column-gap: 1rem;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+form button {
+  background-color: white;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+input[type="text"] {
+  height: 1.8rem;
+  border-radius: 0.9rem;
+  border: none;
+  background-color: lightgray;
+  padding: 0 0.75rem;
+  font-size: 1rem;
+  margin-right: 5vw;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  grid-gap: 2rem;
+}
+
+.notifications {
+  justify-self: end;
+}
+
+.profile {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  justify-self: start;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  grid-gap: 0.75rem;
+}
+
+img {
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 0.1rem;
+}
+
+.profile img {
+  height: var(--profile-img-height1);
+  width: var(--profile-img-height1);
+}
+
+.profile:hover {
+  text-decoration: underline;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 4rem 5fr repeat(3, 1fr);
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.user img {
+  height: var(--profile-img-height2);
+  width: var(--profile-img-height2);
+}
+
+.user small {
+  font-weight: 600;
+}
+
+.user strong {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.user button {
+  color: white;
+  background-color: var(--secondary-color);
+  height: 2.4rem;
+  border-radius: 1.2rem;
+  font-size: 1rem;
+  
 }
 
 
 
+
 section {
+  position: relative;
+  z-index: -1;
+  background-color: var(--tertiary-color);
 }
