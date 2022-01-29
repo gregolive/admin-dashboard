@@ -5,6 +5,8 @@
 
   --profile-img-height1: 2.5rem;
   --profile-img-height2: 3.75rem;
+
+  --section-vertical-padding: 2rem;
 }
 
 body {
@@ -14,7 +16,7 @@ body {
 
 .container {
   display: grid;
-  grid-template: 20vh 80vh / 1fr 5fr;
+  grid-template: 20vh auto / 1fr 5fr;
 }
 
 .container > * {
@@ -49,7 +51,7 @@ aside.dashboard {
   text-decoration: underline;
 }
 
-h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
@@ -59,8 +61,9 @@ aside.dashboard svg {
 
 header {
   background-color: white;
-  min-height: 130px;
-  padding: 0.5rem 3rem;
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem min(3rem, 3.5vw);
   grid-column: 2 / -1;
   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.6);
   display: grid;
@@ -156,7 +159,7 @@ img {
   font-weight: 600;
 }
 
-.user strong {
+.user h1 {
   font-size: 1.3rem;
   font-weight: 900;
 }
@@ -167,14 +170,148 @@ img {
   height: 2.4rem;
   border-radius: 1.2rem;
   font-size: 1rem;
+}
+
+section {
+  min-height: calc(80vh - (var(--section-vertical-padding) * 2));
+  background-color: var(--tertiary-color);
+  display: grid;
+  grid-template: 4fr 5fr / 3fr 1fr;
+  gap: 1.2rem;
+  padding: var(--section-vertical-padding) 1.5rem;
+}
+
+section .projects {
+  grid-area: 1 / 1 / -1 / 2;
+}
+
+section h2 {
+  font-size: 1.2rem;
+}
+
+.sub-section {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 0.75rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.project-grid article {
+  border-left: 0.4rem solid var(--primary-color);
+  padding: 1rem 1.5rem 1rem 1.1rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  row-gap: 0.75rem;
+}
+
+.project-grid article, .side-bar {
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+article h3 {
+  font-size: 0.9rem;
+  padding-bottom: 0.2rem;
+}
+
+article p {
+  font-size: 0.8rem;
+}
+
+p {
+  color: gray;
+  margin: 0;
+}
+
+.article-buttons {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, auto);
+  column-gap: 0.5rem;
+}
+
+.article-btn {
+  background-color: white;
+}
+
+.article-btn.one {
+  grid-column: 2 / span 1; 
+}
+
+.side-bar {
+  padding: 0.5rem 1.25rem;
+}
+
+section .announcements {
+  grid-area: 1 / 2 / 2 / -1;
+}
+
+.announcement-grid {
+  background-color: white;
+}
+
+.announcement-wrapper {
+  background-color: lightgray;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 1px;
+  height: 100%;
+}
+
+.announce {
+  background-color: white;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.announcement-grid h6 {
+  color: black;
+  font-size: 0.8rem;
+  padding-bottom: 0.2rem;
+}
+
+.announcement-grid p {
+  font-size: 0.6rem;
+}
+
+section .trending {
+  grid-area: 2 / 2 / -1 / -1;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+}
+
+.trending-user {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 0.5rem;
+}
+
+.trending-user img {
+  height: var(--profile-img-height1);
+  width: var(--profile-img-height1);
   
 }
 
+.trending-user strong {
+  color: black;
+  font-size: 0.9rem;
+}
 
-
-
-section {
-  position: relative;
-  z-index: -1;
-  background-color: var(--tertiary-color);
+.trending-user small {
+  color: gray;
+  font-size: 0.9rem;
 }
