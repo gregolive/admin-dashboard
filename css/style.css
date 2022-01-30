@@ -197,7 +197,7 @@ section h2 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
 }
@@ -314,4 +314,30 @@ section .trending {
 .trending-user small {
   color: gray;
   font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  section {
+    grid-template: 1fr / repeat(2, 1fr);
+  }
+
+  section .projects {
+    grid-area: 1 / 1 / 2 / -1;
+  }
+
+  section .announcements {
+    grid-area: 2 / 1 / -1 / 2;
+  }
+
+  section .trending {
+    grid-area: 2 / 2 / -1 / -1;
+  }
+
+  .trending-grid {
+    row-gap: 0.5em;
+  }
+
+  .side-bar {
+    padding: 1rem 1.25rem;
+  }
 }
