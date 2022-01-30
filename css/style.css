@@ -176,7 +176,7 @@ section {
   min-height: calc(80vh - (var(--section-vertical-padding) * 2));
   background-color: var(--tertiary-color);
   display: grid;
-  grid-template: 4fr 5fr / 3fr 1fr;
+  grid-template: 4fr 5fr / 1fr 17rem;
   gap: 1.2rem;
   padding: var(--section-vertical-padding) 1.5rem;
 }
